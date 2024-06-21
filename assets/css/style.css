@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    
+
 }
 
 
@@ -18,22 +18,27 @@ header h1 {
     font-weight: bold;
     padding: 5px;
 }
+
 .music-list {
     margin-top: 20px;
 }
-.card{
+
+.card {
     width: 400px;
     margin-top: 10px;
     margin-left: 20px;
 }
+
 .card audio {
     margin-left: -10px;
     width: 270px;
 }
+
 .card img {
     width: 108;
     object-fit: contain;
 }
+
 .footer {
     width: 100%;
     height: 50px;
@@ -41,18 +46,21 @@ header h1 {
     background-color: gray;
     position: fixed;
 }
+
 .footer p {
     text-align: center;
     font-size: 18px;
     color: white;
     padding: 16px;
 }
+
 main ul {
     list-style: none;
 }
+
 .music-list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
     gap: 55px;
     padding: 10px;
     margin-right: 10px;
