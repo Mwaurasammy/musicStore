@@ -24,7 +24,7 @@ header h1 {
 }
 
 .card {
-    width: 400px;
+    width: 350px;
     margin-top: 10px;
     margin-left: 20px;
 }
@@ -35,7 +35,7 @@ header h1 {
 }
 
 .card img {
-    width: 108;
+    width: 100;
     object-fit: contain;
 }
 
@@ -61,7 +61,7 @@ main ul {
 .music-list {
     display: grid;
     grid-template-columns: auto auto auto auto auto;
-    gap: 30px;
-    padding: 10px;
-    margin-right: 10px;
+    gap: 10px;
+    
+    
 }
