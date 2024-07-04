@@ -18,6 +18,7 @@ header {
 main {
     margin-top: 80px;
     padding: 20px;
+    background-color: #E3E1D9;
 }
 
 header h1 {
@@ -35,6 +36,11 @@ header h1 {
     margin-top: 10px;
     margin-left: 20px;
     box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-20px);
 }
 
 .card audio {
@@ -74,4 +80,23 @@ main ul {
     justify-content: center;
     gap: 20px;
     padding: 20px;
+}
+
+#add-music {
+    background-color: ivory;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    border-radius: 20px;
+}
+
+#add-music:hover {
+    background-color: skyblue;
 }
