@@ -1,3 +1,7 @@
+let musicContainer = document.getElementById("musicList-container");
+let modalContainer = document.getElementById("myModal");
+let modalClose = document.getElementById("modal-close");
+
 let musicList = [
     {
         id: 1,
@@ -69,13 +73,57 @@ let musicList = [
         artistName: "Akeboshi",
         audioLink: "assets/music/wind_mp3_27876.mp3"
     },
-]
+];
 
-// function displayMusicAlbum() {
-//     musicList.map((musicItem) => {
-//         let myAlbumCard = document.createElement("li");
+function displayMusicAlbum() {
+    musicList.forEach((musicItem) => {
+        let myAlbumCard = document.createElement("li");
+        myAlbumCard.innerHTML = `
+        <div class="card" style="width: 18rem">
+          <img src="${musicItem.musicImageLink}" class="card-img-top" alt="${musicItem.artistName}">
+          <div class="card-body">
+            <h5 class="card-title">${musicItem.musicTitle}</h5>
+            <p class="card-text">${musicItem.artistName}</p>
+            <audio controls>
+              <source src="${musicItem.audioLink}" type="audio/mpeg" />
+            </audio>
+          </div>
+        </div>
+        `;
+        
+        myAlbumCard.addEventListener("click", () => openModal(musicItem));
+        musicContainer.appendChild(myAlbumCard);
+    });
+}
 
-//     })
-// }
+function openModal(musicItem) {
+    let modalContent = document.getElementById("modal-info");
+    modalContainer.style.display = "block";
+    modalContent.innerHTML = `
+    <div class="image-container">
+      <img src="${musicItem.musicImageLink}" alt="${musicItem.artistName}" />
+    </div>
+    <div class="music-information">
+        <h5>${musicItem.musicTitle}</h5>
+        <p class="card-text">${musicItem.artistName}</p>
+        <audio controls id="audio-controls">
+            <source src="${musicItem.audioLink}" type="audio/mpeg" />
+        </audio>
+    </div>
+    `;
+}
 
-// displayMusicAlbum();
+function closeModal() {
+    modalContainer.style.display = "none";
+    document.getElementById("audio-controls").src = "";
+}
+window.onclick = function(e) {
+    let modal = document.getElementById("myModal");
+    if (e.target == modal) {
+        modal.style.display = "none";
+    }
+};
+
+modalClose.addEventListener("click", closeModal);
+
+displayMusicAlbum();
