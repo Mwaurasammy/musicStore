@@ -73,6 +73,20 @@ let musicList = [
         artistName: "Akeboshi",
         audioLink: "assets/music/wind_mp3_27876.mp3"
     },
+    {
+        id: 11,
+        musicImageLink: "assets/images/wind.jpeg",
+        musicTitle: "Wind",
+        artistName: "Akeboshi",
+        audioLink: "assets/music/wind_mp3_27876.mp3"
+    },
+    {
+        id: 10,
+        musicImageLink: "assets/images/wind.jpeg",
+        musicTitle: "Wind",
+        artistName: "Akeboshi",
+        audioLink: "assets/music/wind_mp3_27876.mp3"
+    },
 ];
 
 function displayMusicAlbum() {
@@ -90,7 +104,7 @@ function displayMusicAlbum() {
           </div>
         </div>
         `;
-        
+
         myAlbumCard.addEventListener("click", () => openModal(musicItem));
         musicContainer.appendChild(myAlbumCard);
     });
@@ -117,7 +131,7 @@ function closeModal() {
     modalContainer.style.display = "none";
     document.getElementById("audio-controls").src = "";
 }
-window.onclick = function(e) {
+window.onclick = function (e) {
     let modal = document.getElementById("myModal");
     if (e.target == modal) {
         modal.style.display = "none";
